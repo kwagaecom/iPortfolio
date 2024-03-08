@@ -717,8 +717,7 @@
             <label><b>Subject</b>:</label>
             <input id="subject" name="subject" required="" type="text" />
           
-            <label><b>GST</b>:</label>
-            <input id="gst" name="gst" required="" type="text" />
+          
           
 
             <label><b>COUNTRY</b></label>
@@ -992,48 +991,7 @@
       
     
     
-            <label><b>DRYFRUIT</b></label>
-            <select id="DRYFRUIT" name="DRYFRUIT" required="">
-                <option value="SELECT">SELECT DRYFRUIT... </option>
-                <option value="Coconut">Coconut</option>
-                <option value="Rasin">Rasin</option>
-                <option value="BETULNUT/SUPARI">BETULNUT/SUPARI </option>
-                <option value="BERRY">BERRY</option>
-                <option value="NUTS">NUTS</option>
-                <option value="ALMOND">ALMOND </option>
-                 <option value="SAFFRON">SAFFRON</option>
-                <option value="PISTACHIO">PISTACHIO</option>
-                <option value="DATES">DATES</option>
-              </select>
-            <label><b>Weight:</b></label>
-            <select id="weight" name="weight" required="">
-                <option value="SELECT">SELECT Weight...</option>
-                <option value="10kg">10 kg</option>
-                <option value="50kg">50 kg</option>
-                <option value="100kg">100 kg</option>
-                <option value="200kg">200 kg</option>
-            </select><label><b>HERBALPRODUCTS</b></label>
-            <select id="HERBALPRODUCTS" name="HERBALPRODUCTS" required="">
-                <option value="SELECT">SELECT Herbal Products...</option>
-                <option value="SOAP">SOAP</option>
-                <option value="SHAMPOO">SHAMPOO</option>
-                <option value="CREAM">CREAM </option>
-                <option value="SERUM">SERUM</option>
-                <option value="TONNER">TONNER </option>
-                 <option value="BATHROOM CLEANER">BATHROOM CLEANER</option>
-                <option value="KWAGA WINTER SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA WINTER SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
-                <option value="KWAGA SUMMER SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA SUMMER SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
-                <option value="KWAGA RAINY SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA RAINY SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
-              </select>
-          
-            <label><b>Piece</b>:</label>
-            <select id="piece" name="piece" required="">
-                <option value="SELECT">SELECT Piece... </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              
-            </select>
+           
             <label><b>Message</b>:</label>
             <textarea id="message" name="message" required="" rows="4">Write Type Which You Required</textarea>
 
@@ -1048,7 +1006,7 @@
 
             const formData = new FormData(event.target);
             const email = 'kwagaecom@gmail.com'; // Email address where the message will be sent
-            const gst = formData.get("gst");
+           
             const subject = formData.get("subject");
             const city = formData.get("city");
             const state= formData.get("state");
@@ -1058,10 +1016,7 @@
             const address = formData.get("address");
             const name = formData.get("name");
             const phone = formData.get("phone");
-            const DRYFRUIT = formData.get("DRYFRUIT");
-            const weight = formData.get("weight");
-            const HERBALPRODUCTS = formData.get("HERBALPRODUCTS");
-            const piece = formData.get("piece");
+            
             const message = `
                 Name: ${name}
                 Phone: ${phone}
@@ -1071,11 +1026,7 @@
                 city: ${city}
                 state: ${state}
                 postcode: ${postcode}
-                gst: ${gst}
-                DRYFRUIT: ${DRYFRUIT}
-                Weight: ${weight}
-                HERBALPRODUCTS: ${HERBALPRODUCTS}
-                piece: ${piece}
+               
                 Message: ${formData.get("message")}
             `;
 
