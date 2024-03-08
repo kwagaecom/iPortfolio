@@ -589,34 +589,506 @@
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
+        
+    <style>
+        /* Basic CSS for styling the form */
+        .contact-form {
+            max-width: 1000px;
+            margin: 0 auto;
+          text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="tel"],
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+      .contact-form  {
+            display: flex;
+            justify-content: space-between;
+            align-items: justify;
+            margin-bottom: 10px;
+        }
+
+        label {
+            flex: 1;
+        }
+
+        input {
+            flex: 2;
+            margin-left: 10px;
+            padding: 5px;
+            border: 5px solid #ccc;
+        }
+    
+        .submit-btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: GREEN, sans-serif;
+          
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border: 2px solid #333; /* Black border */
+            border-radius: 10px;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+<link href="style.css" rel="stylesheet"></link>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <div class="contact-form">
+      
+        <form id="contactForm">
+            <label><b>Name<i></i></b>:</label>
+            <input id="name" name="name" required="" type="text" />
+
+            <label><b>Phone Number</b>:</label>
+            <input id="phone" name="phone" required="" type="tel" />
+
+            <label><b>Subject</b>:</label>
+            <input id="subject" name="subject" required="" type="text" />
+          
+            <label><b>GST</b>:</label>
+            <input id="gst" name="gst" required="" type="text" />
+          
+
+            <label><b>COUNTRY</b></label>
+            <select id="COUNTRY" name="COUNTRY" required="">
+               <option value="select">Select a country...</option>
+        <option value="AFG">Afghanistan</option>
+        <option value="ALA">Åland Islands</option>
+        <option value="ALB">Albania</option>
+        <option value="DZA">Algeria</option>
+        <option value="ASM">American Samoa</option>
+        <option value="AND">Andorra</option>
+        <option value="AGO">Angola</option>
+        <option value="AIA">Anguilla</option>
+        <option value="ATA">Antarctica</option>
+        <option value="ATG">Antigua and Barbuda</option>
+        <option value="ARG">Argentina</option>
+        <option value="ARM">Armenia</option>
+        <option value="ABW">Aruba</option>
+        <option value="AUS">Australia</option>
+        <option value="AUT">Austria</option>
+        <option value="AZE">Azerbaijan</option>
+        <option value="BHS">Bahamas</option>
+        <option value="BHR">Bahrain</option>
+        <option value="BGD">Bangladesh</option>
+        <option value="BRB">Barbados</option>
+        <option value="BLR">Belarus</option>
+        <option value="BEL">Belgium</option>
+        <option value="BLZ">Belize</option>
+        <option value="BEN">Benin</option>
+        <option value="BMU">Bermuda</option>
+        <option value="BTN">Bhutan</option>
+        <option value="BOL">Bolivia, Plurinational State of</option>
+        <option value="BES">Bonaire, Sint Eustatius and Saba</option>
+        <option value="BIH">Bosnia and Herzegovina</option>
+        <option value="BWA">Botswana</option>
+        <option value="BVT">Bouvet Island</option>
+        <option value="BRA">Brazil</option>
+        <option value="IOT">British Indian Ocean Territory</option>
+        <option value="BRN">Brunei Darussalam</option>
+        <option value="BGR">Bulgaria</option>
+        <option value="BFA">Burkina Faso</option>
+        <option value="BDI">Burundi</option>
+        <option value="KHM">Cambodia</option>
+        <option value="CMR">Cameroon</option>
+        <option value="CAN">Canada</option>
+        <option value="CPV">Cape Verde</option>
+        <option value="CYM">Cayman Islands</option>
+        <option value="CAF">Central African Republic</option>
+        <option value="TCD">Chad</option>
+        <option value="CHL">Chile</option>
+        <option value="CHN">China</option>
+        <option value="CXR">Christmas Island</option>
+        <option value="CCK">Cocos (Keeling) Islands</option>
+        <option value="COL">Colombia</option>
+        <option value="COM">Comoros</option>
+        <option value="COG">Congo</option>
+        <option value="COD">Congo, the Democratic Republic of the</option>
+        <option value="COK">Cook Islands</option>
+        <option value="CRI">Costa Rica</option>
+        <option value="CIV">Côte d'Ivoire</option>
+        <option value="HRV">Croatia</option>
+        <option value="CUB">Cuba</option>
+        <option value="CUW">Curaçao</option>
+        <option value="CYP">Cyprus</option>
+        <option value="CZE">Czech Republic</option>
+        <option value="DNK">Denmark</option>
+        <option value="DJI">Djibouti</option>
+        <option value="DMA">Dominica</option>
+        <option value="DOM">Dominican Republic</option>
+        <option value="ECU">Ecuador</option>
+        <option value="EGY">Egypt</option>
+        <option value="SLV">El Salvador</option>
+        <option value="GNQ">Equatorial Guinea</option>
+        <option value="ERI">Eritrea</option>
+        <option value="EST">Estonia</option>
+        <option value="ETH">Ethiopia</option>
+        <option value="FLK">Falkland Islands (Malvinas)</option>
+        <option value="FRO">Faroe Islands</option>
+        <option value="FJI">Fiji</option>
+        <option value="FIN">Finland</option>
+        <option value="FRA">France</option>
+        <option value="GUF">French Guiana</option>
+        <option value="PYF">French Polynesia</option>
+        <option value="ATF">French Southern Territories</option>
+        <option value="GAB">Gabon</option>
+        <option value="GMB">Gambia</option>
+        <option value="GEO">Georgia</option>
+        <option value="DEU">Germany</option>
+        <option value="GHA">Ghana</option>
+        <option value="GIB">Gibraltar</option>
+        <option value="GRC">Greece</option>
+        <option value="GRL">Greenland</option>
+        <option value="GRD">Grenada</option>
+        <option value="GLP">Guadeloupe</option>
+        <option value="GUM">Guam</option>
+        <option value="GTM">Guatemala</option>
+        <option value="GGY">Guernsey</option>
+        <option value="GIN">Guinea</option>
+        <option value="GNB">Guinea-Bissau</option>
+        <option value="GUY">Guyana</option>
+        <option value="HTI">Haiti</option>
+        <option value="HMD">Heard Island and McDonald Islands</option>
+        <option value="VAT">Holy See (Vatican City State)</option>
+        <option value="HND">Honduras</option>
+        <option value="HKG">Hong Kong</option>
+        <option value="HUN">Hungary</option>
+        <option value="ISL">Iceland</option>
+        <option value="IND">India</option>
+        <option value="IDN">Indonesia</option>
+        <option value="IRN">Iran, Islamic Republic of</option>
+        <option value="IRQ">Iraq</option>
+        <option value="IRL">Ireland</option>
+        <option value="IMN">Isle of Man</option>
+        <option value="ISR">Israel</option>
+        <option value="ITA">Italy</option>
+        <option value="JAM">Jamaica</option>
+        <option value="JPN">Japan</option>
+        <option value="JEY">Jersey</option>
+        <option value="JOR">Jordan</option>
+        <option value="KAZ">Kazakhstan</option>
+        <option value="KEN">Kenya</option>
+        <option value="KIR">Kiribati</option>
+        <option value="PRK">Korea, Democratic People's Republic of</option>
+        <option value="KOR">Korea, Republic of</option>
+        <option value="KWT">Kuwait</option>
+        <option value="KGZ">Kyrgyzstan</option>
+        <option value="LAO">Lao People's Democratic Republic</option>
+        <option value="LVA">Latvia</option>
+        <option value="LBN">Lebanon</option>
+        <option value="LSO">Lesotho</option>
+        <option value="LBR">Liberia</option>
+        <option value="LBY">Libya</option>
+        <option value="LIE">Liechtenstein</option>
+        <option value="LTU">Lithuania</option>
+        <option value="LUX">Luxembourg</option>
+        <option value="MAC">Macao</option>
+        <option value="MKD">Macedonia, the former Yugoslav Republic of</option>
+        <option value="MDG">Madagascar</option>
+        <option value="MWI">Malawi</option>
+        <option value="MYS">Malaysia</option>
+        <option value="MDV">Maldives</option>
+        <option value="MLI">Mali</option>
+        <option value="MLT">Malta</option>
+        <option value="MHL">Marshall Islands</option>
+        <option value="MTQ">Martinique</option>
+        <option value="MRT">Mauritania</option>
+        <option value="MUS">Mauritius</option>
+        <option value="MYT">Mayotte</option>
+        <option value="MEX">Mexico</option>
+        <option value="FSM">Micronesia, Federated States of</option>
+        <option value="MDA">Moldova, Republic of</option>
+        <option value="MCO">Monaco</option>
+        <option value="MNG">Mongolia</option>
+        <option value="MNE">Montenegro</option>
+        <option value="MSR">Montserrat</option>
+        <option value="MAR">Morocco</option>
+        <option value="MOZ">Mozambique</option>
+        <option value="MMR">Myanmar</option>
+        <option value="NAM">Namibia</option>
+        <option value="NRU">Nauru</option>
+        <option value="NPL">Nepal</option>
+        <option value="NLD">Netherlands</option>
+        <option value="NCL">New Caledonia</option>
+        <option value="NZL">New Zealand</option>
+        <option value="NIC">Nicaragua</option>
+        <option value="NER">Niger</option>
+        <option value="NGA">Nigeria</option>
+        <option value="NIU">Niue</option>
+        <option value="NFK">Norfolk Island</option>
+        <option value="MNP">Northern Mariana Islands</option>
+        <option value="NOR">Norway</option>
+        <option value="OMN">Oman</option>
+        <option value="PAK">Pakistan</option>
+        <option value="PLW">Palau</option>
+        <option value="PSE">Palestinian Territory, Occupied</option>
+        <option value="PAN">Panama</option>
+        <option value="PNG">Papua New Guinea</option>
+        <option value="PRY">Paraguay</option>
+        <option value="PER">Peru</option>
+        <option value="PHL">Philippines</option>
+        <option value="PCN">Pitcairn</option>
+        <option value="POL">Poland</option>
+        <option value="PRT">Portugal</option>
+        <option value="PRI">Puerto Rico</option>
+        <option value="QAT">Qatar</option>
+        <option value="REU">Réunion</option>
+        <option value="ROU">Romania</option>
+        <option value="RUS">Russian Federation</option>
+        <option value="RWA">Rwanda</option>
+        <option value="BLM">Saint Barthélemy</option>
+        <option value="SHN">Saint Helena, Ascension and Tristan da Cunha</option>
+        <option value="KNA">Saint Kitts and Nevis</option>
+        <option value="LCA">Saint Lucia</option>
+        <option value="MAF">Saint Martin (French part)</option>
+        <option value="SPM">Saint Pierre and Miquelon</option>
+        <option value="VCT">Saint Vincent and the Grenadines</option>
+        <option value="WSM">Samoa</option>
+        <option value="SMR">San Marino</option>
+        <option value="STP">Sao Tome and Principe</option>
+        <option value="SAU">Saudi Arabia</option>
+        <option value="SEN">Senegal</option>
+        <option value="SRB">Serbia</option>
+        <option value="SYC">Seychelles</option>
+        <option value="SLE">Sierra Leone</option>
+        <option value="SGP">Singapore</option>
+        <option value="SXM">Sint Maarten (Dutch part)</option>
+        <option value="SVK">Slovakia</option>
+        <option value="SVN">Slovenia</option>
+        <option value="SLB">Solomon Islands</option>
+        <option value="SOM">Somalia</option>
+        <option value="ZAF">South Africa</option>
+        <option value="SGS">South Georgia and the South Sandwich Islands</option>
+        <option value="SSD">South Sudan</option>
+        <option value="ESP">Spain</option>
+        <option value="LKA">Sri Lanka</option>
+        <option value="SDN">Sudan</option>
+        <option value="SUR">Suriname</option>
+        <option value="SJM">Svalbard and Jan Mayen</option>
+        <option value="SWZ">Swaziland</option>
+        <option value="SWE">Sweden</option>
+        <option value="CHE">Switzerland</option>
+        <option value="SYR">Syrian Arab Republic</option>
+        <option value="TWN">Taiwan, Province of China</option>
+        <option value="TJK">Tajikistan</option>
+        <option value="TZA">Tanzania, United Republic of</option>
+        <option value="THA">Thailand</option>
+        <option value="TLS">Timor-Leste</option>
+        <option value="TGO">Togo</option>
+        <option value="TKL">Tokelau</option>
+        <option value="TON">Tonga</option>
+        <option value="TTO">Trinidad and Tobago</option>
+        <option value="TUN">Tunisia</option>
+        <option value="TUR">Turkey</option>
+        <option value="TKM">Turkmenistan</option>
+        <option value="TCA">Turks and Caicos Islands</option>
+        <option value="TUV">Tuvalu</option>
+        <option value="UGA">Uganda</option>
+        <option value="UKR">Ukraine</option>
+        <option value="ARE">United Arab Emirates</option>
+        <option value="GBR">United Kingdom</option>
+        <option value="USA">United States</option>
+        <option value="UMI">United States Minor Outlying Islands</option>
+        <option value="URY">Uruguay</option>
+        <option value="UZB">Uzbekistan</option>
+        <option value="VUT">Vanuatu</option>
+        <option value="VEN">Venezuela, Bolivarian Republic of</option>
+        <option value="VNM">Viet Nam</option>
+        <option value="VGB">Virgin Islands, British</option>
+        <option value="VIR">Virgin Islands, U.S.</option>
+        <option value="WLF">Wallis and Futuna</option>
+        <option value="ESH">Western Sahara</option>
+        <option value="YEM">Yemen</option>
+        <option value="ZMB">Zambia</option>
+        <option value="ZWE">Zimbabwe</option>
+            
+              </select>
+          
+            <label><b>Address</b>:</label>
+            <input id="address" name="address" required="" type="text" />
+          <label>
+      <span> City <span class="required">*</span></span>
+      <input name="city" type="text" /> 
+    </label>
+    <label>
+      <span>State  <span class="required">*</span></span>
+      <input name="state" type="text" /> 
+    </label>
+    <label>
+      <span>Postcode / ZIP <span class="required">*</span></span>
+      <input name="postcode" type="text" /> 
+      
+    
+    
+            <label><b>DRYFRUIT</b></label>
+            <select id="DRYFRUIT" name="DRYFRUIT" required="">
+                <option value="SELECT">SELECT DRYFRUIT... </option>
+                <option value="Coconut">Coconut</option>
+                <option value="Rasin">Rasin</option>
+                <option value="BETULNUT/SUPARI">BETULNUT/SUPARI </option>
+                <option value="BERRY">BERRY</option>
+                <option value="NUTS">NUTS</option>
+                <option value="ALMOND">ALMOND </option>
+                 <option value="SAFFRON">SAFFRON</option>
+                <option value="PISTACHIO">PISTACHIO</option>
+                <option value="DATES">DATES</option>
+              </select>
+            <label><b>Weight:</b></label>
+            <select id="weight" name="weight" required="">
+                <option value="SELECT">SELECT Weight...</option>
+                <option value="10kg">10 kg</option>
+                <option value="50kg">50 kg</option>
+                <option value="100kg">100 kg</option>
+                <option value="200kg">200 kg</option>
+            </select><label><b>HERBALPRODUCTS</b></label>
+            <select id="HERBALPRODUCTS" name="HERBALPRODUCTS" required="">
+                <option value="SELECT">SELECT Herbal Products...</option>
+                <option value="SOAP">SOAP</option>
+                <option value="SHAMPOO">SHAMPOO</option>
+                <option value="CREAM">CREAM </option>
+                <option value="SERUM">SERUM</option>
+                <option value="TONNER">TONNER </option>
+                 <option value="BATHROOM CLEANER">BATHROOM CLEANER</option>
+                <option value="KWAGA WINTER SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA WINTER SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
+                <option value="KWAGA SUMMER SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA SUMMER SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
+                <option value="KWAGA RAINY SHIELD MEDICAL DISEASE PREVENTION KIT BOX">KWAGA RAINY SHIELD MEDICAL DISEASE PREVENTION KIT BOX</option>
+              </select>
+          
+            <label><b>Piece</b>:</label>
+            <select id="piece" name="piece" required="">
+                <option value="SELECT">SELECT Piece... </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              
+            </select>
+            <label><b>Message</b>:</label>
+            <textarea id="message" name="message" required="" rows="4">Write Type Which You Required</textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(event.target);
+            const email = 'kwagaecom@gmail.com'; // Email address where the message will be sent
+            const gst = formData.get("gst");
+            const subject = formData.get("subject");
+            const city = formData.get("city");
+            const state= formData.get("state");
+            const postcode= formData.get("postcode");
+            const COUNTRY = formData.get("COUNTRY");
+            const houseadd = formData.get("houseadd");
+            const address = formData.get("address");
+            const name = formData.get("name");
+            const phone = formData.get("phone");
+            const DRYFRUIT = formData.get("DRYFRUIT");
+            const weight = formData.get("weight");
+            const HERBALPRODUCTS = formData.get("HERBALPRODUCTS");
+            const piece = formData.get("piece");
+            const message = `
+                Name: ${name}
+                Phone: ${phone}
+                subject: ${subject}
+                COUNTRY: ${COUNTRY}
+                address: ${address}
+                city: ${city}
+                state: ${state}
+                postcode: ${postcode}
+                gst: ${gst}
+                DRYFRUIT: ${DRYFRUIT}
+                Weight: ${weight}
+                HERBALPRODUCTS: ${HERBALPRODUCTS}
+                piece: ${piece}
+                Message: ${formData.get("message")}
+            `;
+
+            // Create a "mailto" URL with the pre-filled email subject and body
+            const mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+            // Open the default email client with the pre-filled email
+            window.location.href = mailtoURL;
+
+            // You can also display a success message or redirect the user to a thank-you page
+        });
+    </script>
+
 
         </div>
 
