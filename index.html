@@ -590,55 +590,99 @@
  
 
           </div>
-<div class="duo-tab section" id="duoapp" name="Whatsapp Form">
-    <div class="widget HTML" data-version="2" id="HTML59">
-        <h3 class="title">Plz Send Your Order</h3>
-        <div class="widget-content" id="abId0.13429915930265612" abineguid="F658AF5316AF41D6B228FE0D3020219F">
-            <input class="pubic" type="hidden" value="7838090428" />
-            <div class="fused" id="abId0.1621733524804685">
-                <input class="name wa-fuse" name="name" placeholder="Your name" type="text" />
-            </div>
-            <div class="fused" id="abId0.7050038276329065">
-                <input aria-labelledby="number-00000014-acc number-00000014-error-acc number-00000014-instr-acc" class="mobile wa-fuse" data-role="i123-input" data-size="full" name="mobile" placeholder="Phone number" step="any" type="tel" />
-            </div>
-            <div class="fused">
-                <select class="subject wa-option" placeholder="Select Location" required="">
-                    <option disabled selected value="Select Car" />I'Want Service for  ..
-                    <option data-index="0" name="subject" value="I'want Service for  E-Commerce Website" />E-Commerce Website
-                    <option data-index="0" name="subject" value="I'want Service for  Consulting/Agent Website" />Consulting/Agent Website
-                     <option data-index="0" name="subject" value="I'want Service for  Premium Website" />Premium Website
-                    <option data-index="1" name="subject" value="I'want Service for  Designing My Marriage Portfolio" />Designing My Marriage Portfolio
-                    <option data-index="2" name="subject" value="I'want Service for  Designing My Job Portfolio" />Designing My Job Portfolio
-                    <option data-index="1" name="subject" value="I'want Service for  Marriage Card Design" />Marriage Card Design
-                    <option data-index="2" name="subject" value="I'want Service for  Birthday Card Design" />Birthday Card Design
-                    
-                </select>
-            </div>
-            <div class="fused">
-                <textarea class="message wa-fuse" name="message" placeholder="Message for us" rows="3"></textarea>
-            </div>
-            <div class="fused">
-                <textarea class="address wa-fuse" name="address" placeholder="Your address" rows="2"></textarea>
-            </div>
-            <a class="submit" style="font-size: 12px;" onclick="sendWhatsAppMessage()"><svg viewbox="0 0 512 512" width="20" height="20"><path d="M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0  S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z" style="fill:#EDEDED;"></path><path d="M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662  c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234  c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z" style="fill:rgb(37, 211, 102);"></path><path d="M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297  c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048  c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359  c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248  c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062  l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945" style="fill:#FEFEFE;"></path></svg> Send Message</a>
-        </div>
-    </div>
+<style>
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 75%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  /* Popup content */
+  .popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  </style>
+    <link rel="stylesheet" href="styles.css" />
+           <div class="creding">
+<div class="secIn"> 
+<div class="cdtIn section" id="credit-widget">
+
+<button>
+<button onclick="openPopup()">Exclusive Offer !</button>
+
+<!-- The popup -->
+<div id="dealPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Deal of the Week!</h2>
+    <p>50% OFF on all Website Design & Development Services</p>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjviwERW3voL0Ig8Qna_J57M5D-HogRSRJT_KcUTE7H_RaDVug_wdFpxBbnFBkJVg3rglEnFA6t3Z4zAV0LuSKedJxxrM6q1wtVVUYMqz-3XxszflGoIQgW8tDeG3BbN73HR8Rjrim_3Yv38E9InUSkQKJoP1viwtMTsw3Lk3u3BKvtptn8rnkbX81P90s/s320/WEBSITE_-removebg-preview%20(1).png" alt="Deal 1" />
+    <p>Hurry! Offer ends in: <span id="countdown"></span></p>
+<span class="deal-price">Price $ 430</span><br />
+            <span class="discounted-price">Discounted Price $215</span>
+        <br />
+<a href="https://www.kwaga.in/p/blog-page.html"><button>Place Order</button></a>
+<p style="text-align:center;"> <a href="https://www.kwaga.in/p/custom-css-styles-for-service-landing.html#contact-carousel">"Explore Services"</a>...
+  </p></div>
 </div>
-
+  </button>
+  </div>
+  </div>
+      </div>       
 <script>
-    function sendWhatsAppMessage() {
-        var name = document.querySelector('.name').value;
-        var mobile = document.querySelector('.mobile').value;
-        var subject = document.querySelector('.subject').value;
-        var message = document.querySelector('.message').value;
-        var address = document.querySelector('.address').value;
+  // Open the popup
+  function openPopup() {
+    document.getElementById("dealPopup").style.display = "block";
+    var endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7); // 7 days from now
+    var countdownElement = document.getElementById("countdown");
+    var countdownInterval = setInterval(function() {
+      var now = new Date().getTime();
+      var timeLeft = endDate - now;
+      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = "Offer has ended.";
+      }
+    }, 1000);
+  }
 
-        // Construct the WhatsApp message
-        var whatsappMessage = encodeURIComponent("Name: " + name + "\nMobile: " + mobile + "\nSubject: " + subject + "\nMessage: " + message + "\nAddress: " + address);
-
-        // Open WhatsApp with the constructed message
-        window.open('https://wa.me/7838090428?text=' + whatsappMessage, '_blank');
-    }
+  // Close the popup
+  function closePopup() {
+    document.getElementById("dealPopup").style.display = "none";
+  }
 </script>
         
     <style>
