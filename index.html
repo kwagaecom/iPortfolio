@@ -1,77 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<button id="popup-btn" class="btn btn-primary">Open Popup</button>
-
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <h2>Popup Content</h2>
-    <p>This is a popup window created using HTML, CSS, JS, and Bootstrap.</p>
-  </div>
-</div>
-
-<script src="script.js"></script>
-<style>
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.popup-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
-<script>
-
-document.getElementById('popup-btn').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'block';
-});
-
-document.getElementsByClassName('close')[0].addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'none';
-});
-
-window.addEventListener('click', function(event) {
-  if (event.target == document.getElementById('popup')) {
-    document.getElementById('popup').style.display = 'none';
-  }
-});
-
-
-
-
-
-</script>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -127,7 +56,100 @@ window.addEventListener('click', function(event) {
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
+<style>
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 75%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
 
+  /* Popup content */
+  .popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  </style>
+    <link rel="stylesheet" href="styles.css" />
+           <div class="creding">
+<div class="secIn"> 
+<div class="cdtIn section" id="credit-widget">
+
+<button>
+<button onclick="openPopup()">Exclusive Offer !</button>
+
+<!-- The popup -->
+<div id="dealPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Deal of the Week!</h2>
+    <p>50% OFF on all Website Design & Development Services</p>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjviwERW3voL0Ig8Qna_J57M5D-HogRSRJT_KcUTE7H_RaDVug_wdFpxBbnFBkJVg3rglEnFA6t3Z4zAV0LuSKedJxxrM6q1wtVVUYMqz-3XxszflGoIQgW8tDeG3BbN73HR8Rjrim_3Yv38E9InUSkQKJoP1viwtMTsw3Lk3u3BKvtptn8rnkbX81P90s/s320/WEBSITE_-removebg-preview%20(1).png" alt="Deal 1" />
+    <p>Hurry! Offer ends in: <span id="countdown"></span></p>
+<span class="deal-price">Price $ 430</span><br />
+            <span class="discounted-price">Discounted Price $215</span>
+        <br />
+<a href="https://www.kwaga.in/p/blog-page.html"><button>Place Order</button></a>
+<p style="text-align:center;"> <a href="https://www.kwaga.in/p/custom-css-styles-for-service-landing.html#contact-carousel">"Explore Services"</a>...
+  </p></div>
+</div>
+  </button>
+  </div>
+  </div>
+      </div>       
+<script>
+  // Open the popup
+  function openPopup() {
+    document.getElementById("dealPopup").style.display = "block";
+    var endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7); // 7 days from now
+    var countdownElement = document.getElementById("countdown");
+    var countdownInterval = setInterval(function() {
+      var now = new Date().getTime();
+      var timeLeft = endDate - now;
+      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = "Offer has ended.";
+      }
+    }, 1000);
+  }
+
+  // Close the popup
+  function closePopup() {
+    document.getElementById("dealPopup").style.display = "none";
+  }
+</script>
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
@@ -661,100 +683,7 @@ window.addEventListener('click', function(event) {
  
 
           </div>
-<style>
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 75%;
-    height: 75%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
 
-  /* Popup content */
-  .popup-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    text-align: center;
-  }
-
-  /* Close button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-
-  </style>
-    <link rel="stylesheet" href="styles.css" />
-           <div class="creding">
-<div class="secIn"> 
-<div class="cdtIn section" id="credit-widget">
-
-<button>
-<button onclick="openPopup()">Exclusive Offer !</button>
-
-<!-- The popup -->
-<div id="dealPopup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <h2>Deal of the Week!</h2>
-    <p>50% OFF on all Website Design & Development Services</p>
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjviwERW3voL0Ig8Qna_J57M5D-HogRSRJT_KcUTE7H_RaDVug_wdFpxBbnFBkJVg3rglEnFA6t3Z4zAV0LuSKedJxxrM6q1wtVVUYMqz-3XxszflGoIQgW8tDeG3BbN73HR8Rjrim_3Yv38E9InUSkQKJoP1viwtMTsw3Lk3u3BKvtptn8rnkbX81P90s/s320/WEBSITE_-removebg-preview%20(1).png" alt="Deal 1" />
-    <p>Hurry! Offer ends in: <span id="countdown"></span></p>
-<span class="deal-price">Price $ 430</span><br />
-            <span class="discounted-price">Discounted Price $215</span>
-        <br />
-<a href="https://www.kwaga.in/p/blog-page.html"><button>Place Order</button></a>
-<p style="text-align:center;"> <a href="https://www.kwaga.in/p/custom-css-styles-for-service-landing.html#contact-carousel">"Explore Services"</a>...
-  </p></div>
-</div>
-  </button>
-  </div>
-  </div>
-      </div>       
-<script>
-  // Open the popup
-  function openPopup() {
-    document.getElementById("dealPopup").style.display = "block";
-    var endDate = new Date();
-    endDate.setDate(endDate.getDate() + 7); // 7 days from now
-    var countdownElement = document.getElementById("countdown");
-    var countdownInterval = setInterval(function() {
-      var now = new Date().getTime();
-      var timeLeft = endDate - now;
-      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      if (timeLeft < 0) {
-        clearInterval(countdownInterval);
-        countdownElement.innerHTML = "Offer has ended.";
-      }
-    }, 1000);
-  }
-
-  // Close the popup
-  function closePopup() {
-    document.getElementById("dealPopup").style.display = "none";
-  }
-</script>
       <section>
     <style>
         /* Basic CSS for styling the form */
