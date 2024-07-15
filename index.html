@@ -37,7 +37,79 @@
 </head>
 
 <body>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
 
+        strong {
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5em;
+        }
+
+        .contact-info strong {
+            color: #2980b9;
+        }
+    </style>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+            </div>
+            <div class="modal-body text-center">
+                <p><strong>Attention </strong></p>
+                <p>We are thrilled to announce the launch of our newly updated website <b> <a href="https://company.kwaga.ltd/" class="nav-link scrollto active"><i class="bx bx-home"></i>https://kwaga.ltd/</a> </b>Explore our enhanced features, user-friendly design, and the latest updates on our services. Visit us now and discover a seamless browsing experience!</p>
+                
+                <div class="contact-info">
+                    <p>For Your Reference, Our Official Contact Details Are As Follows:</p>
+                    <p><strong>Phone Number:</strong> +91 7838090428</p>
+                    <p><strong>Email ID:</strong> contact@kwaga.ltd</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#myModal').modal('show');
+    });
+</script>
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
